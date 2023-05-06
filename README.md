@@ -1,2 +1,2 @@
-# ML
-ML practices
+# DataAnalysis
+Data Analysis personal projects
