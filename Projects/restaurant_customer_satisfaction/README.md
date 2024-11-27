@@ -1,8 +1,4 @@
-Published notebook for the Restaurant satisfaction project: 
-https://nbviewer.org/github/talinm23/ML/blob/main/Projects/restaurant_customer_satisfaction/Restaurant_satisfaction.ipynb
-
-
-Restaurant Satisfaction Study¶
+The Restaurant Satisfaction Study¶
  
 In this project, we use a dataset of a restaurant from Kaggle and use multiple supervised machine learning models to predict customer high satisfaction at the restaurant. The main objective of this analysis is to deliver two goals: a prediction of customer high satisfaction for the restaurant and an interpretation of the existing features so that the restaurant can focus on the features that lead to great customer satisfaction. First we start by conducting an Exploratory Data Analysis and then move on to solving the problem using Machine Learning models.
 
@@ -25,3 +21,8 @@ Key findings:
 The results from the cross validation runs can be shown in the table below. We observe that the grid search has improved the “balanced accuracy” (as opposed to accuracy). For recall and precision, they sometimes behave opposite to each other, but looking at the f1 score, we see that the balanced XGboost is the the champion model. In the future, we are planning to explore more in the areas of upsampling, downsampling, or resampling (SMOTE, etc.), putting the models in a pipeline object for automation, using other methods to overcome the severe unbalancing sets issue, as well as classifying using other models such as KNN, SVM, ANN, and logistic regression. 
 
 ![Snip20240925_73](https://github.com/user-attachments/assets/3f478504-7abf-41b4-9ecc-2c57e2756eaf)
+
+
+Published notebook for the Restaurant satisfaction study: 
+https://nbviewer.org/github/talinm23/ML/blob/main/Projects/restaurant_customer_satisfaction/Restaurant_satisfaction.ipynb
+
