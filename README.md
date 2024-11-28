@@ -3,7 +3,7 @@
 
 
 #### 📂 Folder Structure
-##### Projects: the folder contains Machine learning and AI related projects.
+###### Projects: the folder contains Machine learning and AI related projects.
 
 
 #### ✨ Features
