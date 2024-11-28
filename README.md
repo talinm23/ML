@@ -3,8 +3,8 @@
 This repository is dedicated to the development and exploration of Machine Learning (ML) and Artificial Intelligence (AI) projects. 
 
 ### 📂 Folder Structure
-ML/: Contains Machine learning and AI related projects.
-data analysis/: Contains one project on exploratory data analysis.
+###### ML/: Contains Machine learning and AI related projects.
+###### data analysis/: Contains one project on exploratory data analysis.
 
 
 ### ✨ Features
