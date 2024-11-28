@@ -1,5 +1,3 @@
 #### Project overview:
 
-In this project, we search for jobs and ask Openai to summarize and organize the contents and information of each job post so that we spend less time skimming through each job posting. 
-This saves a lot of time and a decision whether to apply to the job or not is made much quicker (e.g. 5 seconds vs. 30 seconds). 
-The output still needs some work in regards to the presentaiton of the results. 
+In this project, we search for jobs and use OpenAI to summarize and organize the contents of each job posting. This approach helps save time by reducing the need to skim through each posting in detail. As a result, decisions about whether to apply for a job can be made much faster (e.g., 5 seconds versus 30 seconds). However, the output still requires improvement in terms of presentation.
