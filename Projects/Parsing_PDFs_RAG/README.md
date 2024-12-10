@@ -1,4 +1,4 @@
-Semantic Search system using RAG
+Semantic search system using RAG
 
 - This project is a semantic search system using Retrieval-Augmented Generation (RAG) to analyze and interact with PDF-formatted books. 
 - The goal is to enable efficient analysis, exploration, and conversation with the text data 
