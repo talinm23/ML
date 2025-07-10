@@ -10,3 +10,4 @@ Semantic search system using RAG
 - Then the outputs along with the original query about the book are passed into Google's Gemma model (google/gemma-2b-it) and it responds with the answers. 
 
 
+https://www.mongodb.com/developer/products/atlas/gemma-mongodb-huggingface-rag/
