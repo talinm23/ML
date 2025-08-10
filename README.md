@@ -1,16 +1,16 @@
 #### 🚀 Overview 
-###### This repository is dedicated to the development and exploration of Machine Learning (ML) and Artificial Intelligence (AI) projects. 
+###### This repository is dedicated to the development and exploration of Machine Learning (ML) and Large Language Models (LLM) projects. 
 
 
 #### 📂 Folder Structure
-###### Projects: the folder contains Machine learning and AI related projects.
-###### Playground: the folder contains exercises and learning materials related to ML and AI.
+###### Projects: contains Machine learning and LLM-related projects.
+###### Playground: contains practice projects, exercises, and learning materials related to ML and LLMs.
 
 #### ✨ Features
-###### Data preprocessing, feature engineeing, model training, visulizations, deployment.
+###### Data preprocessing, feature engineering, model training, visualizations, deployment.
 
 
 #### 📬 Contact
-###### For questions or feedback, Feel free to contact me:
+###### For questions or feedback, feel free to contact me:
 ###### Email: talinm2@gmail.com
 
