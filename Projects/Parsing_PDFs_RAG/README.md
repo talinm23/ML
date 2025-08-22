@@ -96,7 +96,7 @@ You must have a MongoDB and HuggingFace accounts and put the tokens in the secre
 It could be possible to run these notebooks to run locally too with your own Jupyter Notebooks.
 For these codes, we used the T4 GPU to run it much faster than using the CPU (I believe it wasn't even running with the CPU). 
 
-Step1:  
+### __*Step1:*__  
 We first mount Google Drive and point to a PDF in Drive. Install and import PyPDF2 if needed.
 Then we extract text from sentences: the code reads every page of the PDF with PyPDF2.PdfReader, concatenates text, then does a simple split on '. ' to get sentences. Removes newline characters in each sentence.
 For the embeddings, the code loads the SentenceTransformers model thenlper/gte-large and defines get_embedding(text) to return a float vector for each sentence (skips empty strings).
@@ -107,9 +107,46 @@ Then we build the dataset. The code applies get_embedding to all sentences, prod
   
 Then we save the DataFrame to Google Drive as csv_saved/dataset_embedded.csv. (literal_eval was imported but not used)
 
-Step2:
 
+### __*Step2:*__
 
+Before running step2, follow the steps below for Atlas/MongoDB first. 
+
+For creating the vector_index search, we follow these steps on Atlas.
+We go to Atlas search to create a search index:
+
+<img width="1885" height="861" alt="vector_search_index1" src="https://github.com/user-attachments/assets/a92c97d6-d19f-4be2-ae81-e6d72ef7c980" />
+
+Then choose "vector search",
+
+<img width="1865" height="852" alt="vector_search_index2" src="https://github.com/user-attachments/assets/8e28ff9c-1a6d-4c6e-ad21-01ac88f7e751" />
+
+Then choose your index name (vector_index) and find your collection,
+
+<img width="1883" height="825" alt="vector_search_index4" src="https://github.com/user-attachments/assets/7b68213e-7d9e-4cbd-a089-25ab6733d378" />
+
+Then choose JSON editor:
+
+<img width="1900" height="853" alt="vector_search_index5" src="https://github.com/user-attachments/assets/46f9fcd2-15de-48d6-b2c2-272bd0b24a9f" />
+
+Edit the Json file, pick one of the similarity options for example cosine,
+
+<img width="1872" height="862" alt="vector_search_index6" src="https://github.com/user-attachments/assets/5ac15d12-19d3-408c-9c3b-39dd004a4b57" />
+
+Then, click on create.
+
+<img width="1885" height="852" alt="vector_search_index7" src="https://github.com/user-attachments/assets/c2d8e863-f59f-4460-9f38-6ec80fbb6635" />
+
+It will take a minute or two to have it ready (status = ready). 
+
+<img width="1888" height="858" alt="vector_search_index8" src="https://github.com/user-attachments/assets/90049dfa-bf5b-4ceb-a562-7356ee49fb6d" />
+
+Now you can run the step2 code.
+
+We convert the vectors back to Python lists. Then we connect to Atlas in MongoDB via MONGO_URI, create the target collection, and bulk-insert the records. 
+Then we do the vector search,e the code mbeds the user query with gte-large, then runs $vectorSearch on the embedding field using the vector_index (Atlas Vector/Search index). See below screenshots for creating the vector_index search.
+Then we build the context by collecting top matching sentences into a single context string (combined_information).
+Then the LLM answers the query by loading Gemma-2B-IT, feeding it the context + question, and printing the generated answer (the output shown earlier on this page).
 
 
 
