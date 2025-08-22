@@ -89,4 +89,28 @@ Output:
 
 
 '''
+
+There are two notebooks to run: step1 and step2. 
+
+You must have a MongoDB and HuggingFace accounts and put the tokens in the secret keys in your Colab notebook.
+It could be possible to run these notebooks to run locally too with your own Jupyter Notebooks.
+For these codes, we used the T4 GPU to run it much faster than using the CPU (I believe it wasn't even running with the CPU). 
+
+Step1:  
+We first mount Google Drive and point to a PDF in Drive. Install and import PyPDF2 if needed.
+Then we extract text from sentences: the code reads every page of the PDF with PyPDF2.PdfReader, concatenates text, then does a simple split on '. ' to get sentences. Removes newline characters in each sentence.
+For the embeddings, the code loads the SentenceTransformers model thenlper/gte-large and defines get_embedding(text) to return a float vector for each sentence (skips empty strings).
+
+Then we build the dataset. The code applies get_embedding to all sentences, producing a Series of vectors; converts to a DataFrame with:
+- embedding_: the embedding vector for each sentence
+- sentences: the original sentence text (without newlines)
+  
+Then we save the DataFrame to Google Drive as csv_saved/dataset_embedded.csv. (literal_eval was imported but not used)
+
+Step2:
+
+
+
+
+
     
